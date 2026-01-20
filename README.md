@@ -11,7 +11,7 @@ Este proyecto presenta una interfaz web moderna, responsiva y optimizada para de
 
 ## Enlace en vivo
 
-[Ver sitio publicado]([https://raldylopez20.github.io/Lopez-Gilbert-Prototipo/](https://raldylopez20.github.io/Lopez-Gilbert-Corredores-de-Seguros/))
+[Ver sitio publicado](https://raldylopez20.github.io/Lopez-Gilbert-Corredores-de-Seguros/)
 
 ## Autor
 
