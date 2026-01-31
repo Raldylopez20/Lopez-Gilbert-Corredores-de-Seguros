@@ -17,6 +17,9 @@
                 <div class="logo-main">🚗 LOPEZ GILBERT</div>
                 <div class="logo-sub">Corredores De Seguros</div>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <i class="bi bi-list"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#beneficios">Beneficios</a></li>
@@ -30,7 +33,12 @@
     <!-- HERO SECTION (Sección Principal) -->
     <!-- ================================ -->
     <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles"></div>
+            <div class="hero-shine"></div>
+        </div>
+        <div class="hero-pattern"></div>
         <div class="hero-content">
             <h1>LOPEZ GILBERT</h1>
             <h2>Corredores de Seguros</h2>
@@ -252,7 +260,7 @@
         <div class="container">
             <h2>¿Listo para Proteger Tu Vehículo?</h2>
             <p>No esperes más. Cotiza gratis y sin compromiso hoy mismo.</p>
-            <a href="#" class="cta-final-button" onclick="openWhatsApp(); return false;">
+            <a href="#" class="cta-final-button whatsapp-cta" onclick="openWhatsApp(); return false;">
     <i class="bi bi-whatsapp"></i>
     Contactar por WhatsApp
 </a>
@@ -286,7 +294,7 @@
             // Reemplaza este número con el número de WhatsApp real (incluye código de país)
             // Formato: código de país + número sin espacios ni guiones
             // Ejemplo República Dominicana: '18091234567'
-            const phoneNumber = '8093609366';
+            const phoneNumber = '+18093609366';
             
             // Mensaje predefinido que se enviará
             const message = encodeURIComponent('Hola Wendy! Me interesa cotizar un seguro de vehículo ');
@@ -296,47 +304,93 @@
         }
 
         /**
-         * Smooth scroll para los enlaces de navegación
-         * Esto hace que cuando hagas clic en un enlace del menú,
-         * la página se desplace suavemente a esa sección
+         * Funcionalidad del Menú Hamburguesa Móvil
          */
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                // Solo aplica el smooth scroll si el href no es solo "#"
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const navLinksItems = document.querySelectorAll('.nav-links a');
+
+            // Toggle del menú móvil
+            mobileMenuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+                
+                // Prevenir scroll del body cuando el menú está abierto
+                if (navLinks.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                    
+                    // Smooth scroll para los enlaces de navegación
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
+                        event.preventDefault();
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
                     }
+                });
+            });
+
+            // Cerrar menú al hacer clic fuera del menú
+            document.addEventListener('click', function(event) {
+                if (!navLinks.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
                 }
             });
-        });
 
-        /**
-         * Animación de entrada para las tarjetas
-         * Las tarjetas aparecen cuando el usuario hace scroll
-         */
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+            // Smooth scroll para los enlaces de navegación (desktop)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Solo aplica el smooth scroll si el href no es solo "#"
+                    if (this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
             });
-        }, {
-            threshold: 0.1
-        });
 
-        // Observa todas las tarjetas para animarlas
-        document.querySelectorAll('.beneficio-card, .servicio-card, .testimonio-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+            /**
+             * Animación de entrada para las tarjetas
+             * Las tarjetas aparecen cuando el usuario hace scroll
+             */
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observa todas las tarjetas para animarlas
+            document.querySelectorAll('.beneficio-card, .servicio-card, .testimonio-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
         });
     </script>
 </body>
