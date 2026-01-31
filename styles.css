@@ -84,59 +84,206 @@ nav {
     opacity: 0.8;
 }
 
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle:hover {
+    color: #60a5fa;
+    transform: scale(1.1);
+}
+
+.mobile-menu-toggle.active {
+    color: #60a5fa;
+}
+
+.mobile-menu-toggle.active i::before {
+    content: '\f659'; /* X icon */
+}
+
 /* ================================ */
 /* HERO SECTION (Sección Principal) */
 /* ================================ */
 
 .hero {
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80') center/cover;
-    color: white;
-    padding: 150px 2rem 100px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 600px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
 }
 
-/* Overlay con patrón de puntos animado */
-.hero::before {
-    content: '';
+/* Fondo del hero con múltiples capas espectaculares */
+.hero-background {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
-    animation: float 20s linear infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100px); }
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 
+/* Gradiente principal espectacular estilo joyería */
+.hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        /* Gradientes radiales principales azules */
+        radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.9) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.8) 0%, transparent 45%),
+        radial-gradient(circle at 60% 70%, rgba(30, 64, 175, 0.7) 0%, transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(147, 197, 253, 0.6) 0%, transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.5) 0%, transparent 25%),
+        radial-gradient(circle at 40% 50%, rgba(37, 99, 235, 0.7) 0%, transparent 30%),
+        /* Gradiente lineal base */
+        linear-gradient(135deg,
+            rgba(10, 10, 10, 0.95) 0%,
+            rgba(30, 64, 175, 0.9) 15%,
+            rgba(37, 99, 235, 0.85) 30%,
+            rgba(59, 130, 246, 0.85) 45%,
+            rgba(96, 165, 250, 0.8) 65%,
+            rgba(30, 64, 175, 0.85) 85%,
+            rgba(10, 10, 10, 0.95) 100%);
+    animation: gradientSpectacular 20s ease-in-out infinite;
+}
+
+@keyframes gradientSpectacular {
+    0%, 100% {
+        background-position: 0% 50%;
+        opacity: 1;
+    }
+    25% {
+        background-position: 50% 30%;
+        opacity: 0.9;
+    }
+    50% {
+        background-position: 100% 50%;
+        opacity: 0.95;
+    }
+    75% {
+        background-position: 50% 70%;
+        opacity: 0.85;
+    }
+}
+
+/* Efecto de partículas brillantes */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(2px 2px at 60% 70%, rgba(147, 197, 253, 0.6), transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 80% 20%, rgba(96, 165, 250, 0.7), transparent),
+        radial-gradient(2px 2px at 10% 80%, rgba(255, 255, 255, 0.6), transparent);
+    background-size: 200% 200%;
+    animation: sparkle 20s linear infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* Efecto de brillo sutil */
+.hero-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.05) 50%,
+            transparent 70%);
+    animation: shine 8s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(0deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(360deg) translateX(100%);
+    }
+}
+
+/* Patrón decorativo mejorado */
+.hero-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image:
+        repeating-linear-gradient(45deg, #3b82f6 0px, #3b82f6 1px, transparent 1px, transparent 15px),
+        repeating-linear-gradient(-45deg, #60a5fa 0px, #60a5fa 1px, transparent 1px, transparent 15px);
+    z-index: 2;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    padding: 2rem;
+    animation: fadeInUp 1.2s ease;
+    position: relative;
+}
+
 .hero h1 {
-    font-size: 3rem;
+    font-size: 6.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1.1;
+    text-shadow:
+        0 0 20px rgba(59, 130, 246, 0.5),
+        0 4px 10px rgba(255, 255, 255, 0.8);
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 4px 10px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 4px 15px rgba(255, 255, 255, 0.9);
+    }
+}
+
+.hero h2 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: fadeInUp 1.2s ease 0.3s backwards;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
+    color: #ffffff;
     animation: fadeInUp 1s ease 0.2s backwards;
 }
 
@@ -176,6 +323,67 @@ nav {
 
 .cta-button i {
     font-size: 1.2rem;
+}
+
+/* Botón WhatsApp especial */
+.whatsapp-cta {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    position: relative;
+    overflow: hidden;
+    animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+.whatsapp-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+    transition: left 0.4s ease;
+    z-index: 0;
+}
+
+.whatsapp-cta:hover::before {
+    left: 0;
+}
+
+.whatsapp-cta:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    color: white;
+}
+
+.whatsapp-cta i {
+    position: relative;
+    z-index: 1;
+    animation: whatsappIconBounce 1.5s ease-in-out infinite;
+}
+
+.whatsapp-cta span {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(37, 211, 102, 0.7);
+    }
+}
+
+@keyframes whatsappIconBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 /* Botón de WhatsApp personalizado */
@@ -484,19 +692,53 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background: white;
-    color: #1e40af;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
     padding: 1.2rem 3rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-final-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+    transition: left 0.4s ease;
+    z-index: 0;
+}
+
+.cta-final-button:hover::before {
+    left: 0;
 }
 
 .cta-final-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+}
+
+.cta-final-button i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.cta-final-button:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.cta-final-button span {
+    position: relative;
+    z-index: 1;
 }
 
 .cta-final-button i {
@@ -516,6 +758,24 @@ footer {
 
 footer p {
     opacity: 0.8;
+    margin: 0.5rem 0;
+}
+
+.footer-developer {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.developer-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.developer-link:hover {
+    color: #60a5fa;
+    transform: scale(1.05);
 }
 
 /* ================================ */
@@ -545,11 +805,8 @@ footer p {
     transform: scale(1.1);
 }
 
-.whatsapp-float-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 32px;
-    color: white;
+.whatsapp-float i {
+    font-size: 1.8rem;
 }
 
 /* Animación de pulso para el botón de WhatsApp */
@@ -567,9 +824,49 @@ footer p {
 /* ================================ */
 
 @media (max-width: 768px) {
-    /* Ocultar menú de navegación en móviles */
+    /* Mobile menu toggle visible */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Navigation links hidden by default */
     .nav-links {
         display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.98) 0%, rgba(59, 130, 246, 0.98) 100%);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        color: white;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #60a5fa;
+        transform: scale(1.05);
+        text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
     }
 
     /* Ajustar logo en móviles */
