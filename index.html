@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lopez Gilbert Corredores de Seguros</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==============================
+       HEADER / NAVEGACIÓN
+  ============================== -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a href="#inicio" class="nav-brand" aria-label="Ir al inicio">
+        <span class="nav-brand-name">Lopez Gilbert</span>
+        <span class="nav-brand-sub">Corredores de Seguros</span>
+      </a>
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio"     class="nav-link">Inicio</a></li>
+        <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+        <li><a href="#servicios"  class="nav-link">Servicios</a></li>
+        <li><a href="#companias"  class="nav-link">Compañías</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==============================
+       HERO — Sección principal
+  ============================== -->
+  <section class="hero" id="inicio" aria-label="Sección principal">
+    <!-- Fondo CSS: gradientes azules atmosféricos -->
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">LOPEZ GILBERT</h1>
+      <!-- Línea de acento azul — el único elemento bold del diseño -->
+      <div class="hero-line" aria-hidden="true"></div>
+      <p class="hero-subtitle">Corredores de Seguros</p>
+      <p class="hero-desc">
+        Licda. Wendy Gilbert. Asesoría especializada en seguros de vehículos,
+        multiriesgo y salud. Trámites rápidos, coberturas garantizadas.
+      </p>
+    </div>
+
+    <!-- Indicador visual de scroll -->
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hero-scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BARRA DE ESTADÍSTICAS
+  ============================== -->
+  <div class="stats-bar" aria-label="Estadísticas">
+    <div class="container stats-inner">
+      <div class="stat">
+        <div class="stat-num-wrap">
+          <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+        </div>
+        <span class="stat-label">Aseguradoras</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <div class="stat-num-wrap">
+          <span class="stat-num" data-target="100">0</span><span class="stat-plus">+</span>
+        </div>
+        <span class="stat-label">Clientes satisfechos</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <div class="stat-num-wrap">
+          <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+        </div>
+        <span class="stat-label">Años de experiencia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       BENEFICIOS
+  ============================== -->
+  <section class="beneficios section" id="beneficios">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+        <p class="section-desc">Tu protección y tranquilidad es nuestra prioridad</p>
+      </div>
+      <div class="beneficios-grid reveal">
+        <div class="beneficio-item">
+          <div class="beneficio-icon" aria-hidden="true">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+          <div>
+            <h3>Cotización rápida</h3>
+            <p>Obtén tu cotización al menor tiempo posible.</p>
+          </div>
+        </div>
+        <div class="beneficio-item">
+          <div class="beneficio-icon" aria-hidden="true">
+            <i class="bi bi-currency-dollar"></i>
+          </div>
+          <div>
+            <h3>Mejores precios</h3>
+            <p>Comparamos entre múltiples aseguradoras para ofrecerte la mejor opción.</p>
+          </div>
+        </div>
+        <div class="beneficio-item">
+          <div class="beneficio-icon" aria-hidden="true">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div>
+            <h3>Coberturas Full y de Ley</h3>
+            <p>Protección a tu patrimonio, responsabilidad civil y daños a terceros.</p>
+          </div>
+        </div>
+        <div class="beneficio-item">
+          <div class="beneficio-icon" aria-hidden="true">
+            <i class="bi bi-telephone"></i>
+          </div>
+          <div>
+            <h3>Atención profesional</h3>
+            <p>Estamos disponibles cuando nos necesites, siempre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       GALERÍA BENTO — Tipos de seguros
+       Orden de grid: corrolla(ancho), salud(alto),
+       CRV, pasola, casa(ancho), Farmacia
+  ============================== -->
+  <section class="galeria" aria-label="Tipos de seguros que manejamos">
+    <div class="bento-grid">
+      <div class="bento-card">
+        <img src="img/corrolla.jpg" alt="Vehículo sedán para seguros de ley">
+        <div class="bento-label"><h3>Seguros de Ley</h3></div>
+      </div>
+      <div class="bento-card">
+        <img src="img/salud.jpg" alt="Seguros ARS Salud">
+        <div class="bento-label"><h3>ARS Salud</h3></div>
+      </div>
+      <div class="bento-card">
+        <img src="img/CRV.webp" alt="SUV para seguros full cobertura">
+        <div class="bento-label"><h3>Seguros Full</h3></div>
+      </div>
+      <div class="bento-card">
+        <img src="img/pasola.jpg" alt="Motocicleta para seguro de moto">
+        <div class="bento-label"><h3>Motocicletas</h3></div>
+      </div>
+      <div class="bento-card">
+        <img src="img/casa.jpg" alt="Vivienda para seguros multiriesgo">
+        <div class="bento-label"><h3>Multiriesgo Vivienda</h3></div>
+      </div>
+      <div class="bento-card">
+        <img src="img/Farmacia.jpg" alt="Negocio para seguros multiriesgo">
+        <div class="bento-label"><h3>Multiriesgo Negocios</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICIOS
+  ============================== -->
+  <section class="servicios section" id="servicios">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title section-title--light">Nuestros servicios</h2>
+        <p class="section-desc section-desc--light">Soluciones completas para tu tranquilidad</p>
+      </div>
+      <div class="servicios-grid reveal">
+        <div class="servicio-col">
+          <h3 class="servicio-col-title">
+            <i class="bi bi-car-front-fill" aria-hidden="true"></i>
+            Seguros disponibles
+          </h3>
+          <ul class="servicio-list">
+            <li>Seguros de Vehículos Full</li>
+            <li>Seguros de Vehículos de Ley</li>
+            <li>Seguros de Multiriesgo</li>
+            <li>Seguros ARS Salud</li>
+            <li>Seguros Médico Viajero</li>
+            <li>Seguros Médico Internacional</li>
+            <li>Fianzas</li>
+          </ul>
+        </div>
+        <div class="servicio-col">
+          <h3 class="servicio-col-title">
+            <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+            Responsabilidad civil
+          </h3>
+          <ul class="servicio-list">
+            <li>Cobertura legal obligatoria</li>
+            <li>Daños a terceros</li>
+            <li>Lesiones corporales</li>
+            <li>Defensa legal incluida</li>
+          </ul>
+        </div>
+        <div class="servicio-col">
+          <h3 class="servicio-col-title">
+            <i class="bi bi-tools" aria-hidden="true"></i>
+            Coberturas adicionales
+          </h3>
+          <ul class="servicio-list">
+            <li>Rescate Vial (Grúa)</li>
+            <li>Centro Asistencial al Automovilista</li>
+            <li>Responsabilidad Civil Exceso</li>
+            <li>Sindicato Nacional de Choferes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       COMPAÑÍAS ASEGURADORAS (MARQUEE)
+  ============================== -->
+  <section class="companias section" id="companias">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Aseguradoras aliadas</h2>
+        <p class="section-desc">Trabajamos con las más reconocidas del país</p>
+      </div>
+    </div>
+    <!-- Marquee scroll infinito -->
+    <div class="marquee-wrap">
+      <div class="marquee-inner" aria-label="Logos de aseguradoras aliadas">
+        <!-- Primera copia -->
+        <img src="img/dominicana seguros.webp"           alt="Dominicana de Seguros"       class="marquee-logo">
+        <img src="img/la monumental de seguros.png"      alt="La Monumental de Seguros"    class="marquee-logo">
+        <img src="img/seguros banreservas.png"           alt="Seguros Banreservas"          class="marquee-logo">
+        <img src="img/mapfre bhd seguros.png"            alt="Mapfre BHD Seguros"           class="marquee-logo">
+        <img src="img/la colonial seguros.png"           alt="La Colonial Seguros"          class="marquee-logo">
+        <img src="img/one alliance seguros.webp"         alt="One Alliance Seguros"         class="marquee-logo">
+        <img src="img/sindicato nacional de choferes.png" alt="Sindicato Nacional de Choferes" class="marquee-logo">
+        <img src="img/mapfre salud ars.png"              alt="Mapfre Salud ARS"             class="marquee-logo">
+        <!-- Duplicado para loop visual continuo -->
+        <img src="img/dominicana seguros.webp"           alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/la monumental de seguros.png"      alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/seguros banreservas.png"           alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/mapfre bhd seguros.png"            alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/la colonial seguros.png"           alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/one alliance seguros.webp"         alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/sindicato nacional de choferes.png" alt="" aria-hidden="true" class="marquee-logo">
+        <img src="img/mapfre salud ars.png"              alt="" aria-hidden="true" class="marquee-logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TESTIMONIOS
+  ============================== -->
+  <section class="testimonios section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-desc">Experiencias reales de personas satisfechas</p>
+      </div>
+      <div class="testimonios-wrap">
+        <div class="testimonios-grid reveal">
+          <blockquote class="testimonio">
+            <p>"Gracias a mi corredora de seguros me siento tranquila y confiada porque siempre está pendiente a todos los trámites con mi póliza manteniéndome siempre informada."</p>
+            <footer>Cliente satisfecha</footer>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>"Satisfecho con el servicio que recibo, el cual es muy profesional y con buenas atenciones. ¡Gracias!"</p>
+            <footer>Cliente satisfecho</footer>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>"Siempre agradecida del seguimiento que se me ha dado como cliente, desde la emisión de póliza, con las renovaciones, pagos y los siniestros que se han presentado."</p>
+            <footer>Cliente satisfecha</footer>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>"Cuando tuve un accidente, Wendy me guió en cada paso del proceso. En menos de una semana mi vehículo estaba en el taller. No podría pedir mejor atención."</p>
+            <footer>Cliente satisfecho</footer>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>"Me avisó con tiempo sobre mi renovación y consiguió una tarifa mejor que la del año anterior. Eso es lo que hace la diferencia: que se preocupa de verdad por sus clientes."</p>
+            <footer>Cliente satisfecha</footer>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>"Contraté el seguro médico viajero para un viaje a Europa y el proceso fue rapidísimo. Todo claro, sin letra pequeña. Viajé tranquilo sabiendo que estaba cubierto."</p>
+            <footer>Cliente satisfecho</footer>
+          </blockquote>
+        </div><!-- /.testimonios-grid -->
+
+        <!-- Flechas debajo del carousel — glass morphism -->
+        <div class="testi-nav">
+          <button class="testi-arrow testi-arrow--prev hidden" id="testiPrev" aria-label="Testimonio anterior">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="testi-arrow testi-arrow--next" id="testiNext" aria-label="Siguiente testimonio">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div><!-- /.testimonios-wrap -->
+    </div>
+  </section>
+
+  <!-- ==============================
+       LLAMADO A LA ACCIÓN FINAL
+  ============================== -->
+  <section class="cta-final">
+    <div class="container cta-final-inner">
+      <h2>¿Listo para proteger tu vehículo?</h2>
+      <p>Cotiza gratis y sin compromiso hoy mismo.</p>
+      <a href="#" class="btn-cta btn-cta--large" id="ctaWaBtn"
+         aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Lopez Gilbert Corredores de Seguros. Todos los derechos reservados.</p>
+      <p class="footer-dev">
+        Developed by
+        <a href="https://raldylopez20.github.io/Landing-page-personal-de-servicios/"
+           target="_blank" rel="noopener noreferrer">Ing. Raldy Lopez</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==============================
+       BOTÓN FLOTANTE DE WHATSAPP
+  ============================== -->
+  <a href="#" class="wa-float" id="waFloat" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
